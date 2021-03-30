@@ -4,11 +4,110 @@
 
 // Code syntax highlighting,
 // powered by https://highlightjs.org
+
+
+
+.slideshow-container {
+    height: 100%;
+
+    div {
+        height: 100%;
+    }
+
+    img {
+        height: 100%;
+        width: 100%;
+        object-fit: cover;
+    }
+
+    .slideshowButtons {
+        position: absolute;
+        top: 0;
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        a {
+            flex: 0 auto;
+            color: white;
+        }
+    }
+}
+
+
+
 @import '~highlight.js/styles/a11y-light.css';
 @import 'base';
 @import 'navigation';
 @import 'mailchimp';
 @import 'blog';
 @import 'maintenance';
+@import 'hero';
+@import 'skills';
+@import 'nav';
+@import 'portfolio';
+@import 'variables';
+
+html, body {
+    scroll-behavior: smooth;
+    font-family: 'Roboto', sans-serif;
+}
+
+
+h1, h2, h3, h4 {
+    color: $primaryBlack;
+}
+
+p {
+    color: $secondaryBlack;
+}
+
+
+h1, h2, h3, h4 {
+    color: $primaryBlack;
+}
+
+p {
+    color: $secondaryBlack;
+}
+
+.primaryColor {
+    color: $primaryColor;
+}
+
+
+
+@keyframes fadeIn {
+from {
+    opacity: 0;
+}
+to {
+    opacity: 1;
+}
+}
+@keyframes rollUp {
+from {
+    visibility: hidden;
+    opacity: 0;
+    transform: matrix(1, 0, 0, 1, 0, 50);
+}
+to {
+    visibility: inherit;
+    opacity: 1;
+    transform: matriX(1, 0, 0, 1, 0, 0);
+}
+}
+@keyframes lToR {
+0% {
+    transform: translateX(-10px);
+}
+50% {
+    transform: translateX(0);
+}
+100% {
+    transform: translateX(-10px);
+}
+}
 
 @tailwind utilities;

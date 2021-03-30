@@ -1,0 +1,60 @@
+﻿.hero {
+    height: 150vh;
+
+    @media screen and (min-width: 764px) {
+        height: 100vh;
+    }
+
+    &__container {
+        display: flex;
+        height: 100%;
+        flex-direction: column;
+
+        @media screen and (min-width: 764px) {
+            flex-direction: row;
+        }
+    }
+
+    &__left-column {
+        flex: 50%;
+        height: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        .hero-text {
+            max-width: 90%;
+
+            @media screen and (min-width: 764px) {
+                max-width: 350px;
+            }
+        }
+    }
+
+    &__right-column {
+        flex: 50%;
+        height: 100%;
+
+        img {
+            height: 100%;
+            width: 100%;
+            object-fit: cover;
+        }
+    }
+
+    .text-seperator {
+        position: relative;
+        display: inline-block;
+        width: 100%;
+        vertical-align: middle;
+        height: 9px;
+        margin-top: 2px;
+
+        span {
+            width: 63px;
+            display: block;
+            background-color: $secondaryColor;
+            height: 9px;
+        }
+    }
+}
