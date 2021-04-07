@@ -3,13 +3,14 @@
         <div class="hero__container">
             <div class="hero__left-column">
                 <div class="hero-text">
-                    <h1>Hello World<span class="primaryColor">.</span></h1>
+                    <h1 style="margin-bottom: 0;">Hello<span class="secondaryColor">!</span></h1>
+                    <h1 style="margin-top: 0;">I'm Stephen Forbes<span class="primaryColor">.</span></h1>
                     <div class="text-seperator">
                         <span></span>
                     </div>
-                    <p>
-                        Lorem ipsum dolor sit amet, nsectetuer cing elit, sed diam nonummy nibhie euismod sne at eleifend itufm erdiet nulla malesuada feugiat vitae nunc sed aecenas volutpat
-                    </p>
+                    <h4>
+                        I'm a Remote Front End Developer.
+                    </h4>
                 </div>
             </div>
 

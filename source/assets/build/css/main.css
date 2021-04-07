@@ -739,18 +739,6 @@ video {
   }
 }
 
-h1, h2, h3, h4 {
-  color: #232322;
-}
-
-p {
-  color: #6A6A6A;
-}
-
-.primaryColor {
-  color: #fe9758;
-}
-
 .slideshow-container {
   height: 100%;
 }
@@ -773,6 +761,7 @@ p {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  padding: 0px 20px;
 }
 
 .slideshow-container .slideshowButtons a {
@@ -1124,7 +1113,7 @@ pre code {
 
 @media screen and (min-width: 764px) {
   .hero__left-column .hero-text {
-    max-width: 350px;
+    max-width: 375px;
   }
 }
 
@@ -1518,6 +1507,22 @@ h1, h2, h3, h4 {
 
 p {
   color: #6A6A6A;
+}
+
+h1, h2, h3, h4 {
+  color: #232322;
+}
+
+p {
+  color: #6A6A6A;
+}
+
+.primaryColor {
+  color: #fe9758;
+}
+
+.secondaryColor {
+  color: #007790;
 }
 
 @-webkit-keyframes fadeIn {
