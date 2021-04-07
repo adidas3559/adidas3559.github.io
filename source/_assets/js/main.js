@@ -17,6 +17,8 @@ const lazyLoadInstance = new LazyLoad({
 });
 
 new Vue({
+    el: '#app',
+
     components: {
         Search,
         PrimitiveForm,
