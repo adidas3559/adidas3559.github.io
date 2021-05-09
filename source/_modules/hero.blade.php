@@ -15,7 +15,7 @@
             </div>
 
             <div class="hero__right-column">
-                <img src="assets/img/witcher2.jpg">
+                <img src="assets/img/me1.jpg">
             </div>
         </div>
     </div>

@@ -5,9 +5,11 @@
                 <div class="left-column-text">
                     <h2>Contact Me :)</h2>
                     <p>Feel free to reach me through email or social media:</p>
-                    <a href="mailto:forbes3559@gmail.com">forbes3559@gmail.com</a>
-                    <a href="https://www.linkedin.com/in/stephen-forbes-58880a121/">LinkedIn</a>
-                    <a href="https://www.facebook.com/stephen.forbes.10297">facebook</a>
+                    <div class="left-column-social">
+                        <a href="mailto:forbes3559@gmail.com">forbes3559@gmail.com</a>
+                        <a href="https://www.linkedin.com/in/stephen-forbes-58880a121/">LinkedIn</a>
+                        <a href="https://www.facebook.com/stephen.forbes.10297">facebook</a>
+                    </div>
                 </div>
             </div>
 
@@ -101,6 +103,13 @@ export default {
         .left-column-text {
             text-align: center;
             padding-top: 20px;
+        }
+
+        .left-column-social {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
         }
     }
 

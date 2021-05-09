@@ -1,5 +1,11 @@
-﻿.portfolio {
+﻿#portfolio {
+    padding-top: -20px;
+}
+
+.portfolio {
     // height: 50vh;
+    // background-color: #f9f9f9;
+    // padding-top: 100px;
 
     &__container {
         display: flex;
@@ -60,7 +66,6 @@
 
             @media screen and (min-width: 850px) {
                 flex-direction: row;
-                color: white;
             }
         }
 
@@ -69,6 +74,7 @@
             display: flex;
             overflow: scroll;
             flex-direction: column;
+            padding: 40px;
 
             @media screen and (min-width: 850px) {
                 flex-direction: row;
@@ -106,6 +112,14 @@
             @media screen and (min-width: 850px) {
                 flex: 0 0 50%
             }
+        }
+
+        ul {
+            padding-left: 20px;
+        }
+
+        li {
+            list-style-type: disc;
         }
     }
 }

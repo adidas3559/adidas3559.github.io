@@ -1736,6 +1736,8 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
 
 
 var querystring = __webpack_require__(/*! querystring */ "./node_modules/querystring-es3/index.js");
@@ -2228,7 +2230,7 @@ exports = module.exports = __webpack_require__(/*! ../../../../node_modules/css-
 
 
 // module
-exports.push([module.i, ".contact {\n  display: flex;\n  justify-content: center;\n  align-items: center;\n  height: 100vh;\n}\n.contact__container {\n  width: 80%;\n  max-width: 1200px;\n  display: flex;\n  height: 50%;\n  flex-direction: column;\n}\n@media screen and (min-width: 764px) {\n.contact__container {\n    flex-direction: row;\n}\n}\n.contact__left-column {\n  flex: 50%;\n  display: flex;\n  align-items: center;\n  flex-direction: column;\n}\n.contact__left-column .left-column-text {\n  text-align: center;\n  padding-top: 20px;\n}\n.contact__right-column {\n  flex: 50%;\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  flex-direction: column;\n}\n.contact__right-column .contactForm {\n  width: 100%;\n}\n.contact__right-column .contactForm label {\n  display: block;\n  width: 100%;\n}\n.contact__right-column .contactForm input {\n  background-color: #f3efef;\n  width: 100%;\n  padding: 12px 15px;\n}\n.contact__right-column .contactForm input:focus {\n  outline: none;\n  border: none;\n}\n.contact__right-column .contactForm textarea {\n  height: 100px;\n  background-color: #f3efef;\n  width: 100%;\n  padding: 12px 15px;\n}\n.contact__right-column .contactForm textarea:focus {\n  outline: none;\n  border: none;\n}\n.contact__right-column .contactForm__field {\n  padding-bottom: 25px;\n  width: 100%;\n}", ""]);
+exports.push([module.i, ".contact {\n  display: flex;\n  justify-content: center;\n  align-items: center;\n  height: 100vh;\n}\n.contact__container {\n  width: 80%;\n  max-width: 1200px;\n  display: flex;\n  height: 50%;\n  flex-direction: column;\n}\n@media screen and (min-width: 764px) {\n.contact__container {\n    flex-direction: row;\n}\n}\n.contact__left-column {\n  flex: 50%;\n  display: flex;\n  align-items: center;\n  flex-direction: column;\n}\n.contact__left-column .left-column-text {\n  text-align: center;\n  padding-top: 20px;\n}\n.contact__left-column .left-column-social {\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  flex-direction: column;\n}\n.contact__right-column {\n  flex: 50%;\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  flex-direction: column;\n}\n.contact__right-column .contactForm {\n  width: 100%;\n}\n.contact__right-column .contactForm label {\n  display: block;\n  width: 100%;\n}\n.contact__right-column .contactForm input {\n  background-color: #f3efef;\n  width: 100%;\n  padding: 12px 15px;\n}\n.contact__right-column .contactForm input:focus {\n  outline: none;\n  border: none;\n}\n.contact__right-column .contactForm textarea {\n  height: 100px;\n  background-color: #f3efef;\n  width: 100%;\n  padding: 12px 15px;\n}\n.contact__right-column .contactForm textarea:focus {\n  outline: none;\n  border: none;\n}\n.contact__right-column .contactForm__field {\n  padding-bottom: 25px;\n  width: 100%;\n}", ""]);
 
 // exports
 
@@ -3817,25 +3819,29 @@ var staticRenderFns = [
           _vm._v("Feel free to reach me through email or social media:")
         ]),
         _vm._v(" "),
-        _c("a", { attrs: { href: "mailto:forbes3559@gmail.com" } }, [
-          _vm._v("forbes3559@gmail.com")
-        ]),
-        _vm._v(" "),
-        _c(
-          "a",
-          {
-            attrs: {
-              href: "https://www.linkedin.com/in/stephen-forbes-58880a121/"
-            }
-          },
-          [_vm._v("LinkedIn")]
-        ),
-        _vm._v(" "),
-        _c(
-          "a",
-          { attrs: { href: "https://www.facebook.com/stephen.forbes.10297" } },
-          [_vm._v("facebook")]
-        )
+        _c("div", { staticClass: "left-column-social" }, [
+          _c("a", { attrs: { href: "mailto:forbes3559@gmail.com" } }, [
+            _vm._v("forbes3559@gmail.com")
+          ]),
+          _vm._v(" "),
+          _c(
+            "a",
+            {
+              attrs: {
+                href: "https://www.linkedin.com/in/stephen-forbes-58880a121/"
+              }
+            },
+            [_vm._v("LinkedIn")]
+          ),
+          _vm._v(" "),
+          _c(
+            "a",
+            {
+              attrs: { href: "https://www.facebook.com/stephen.forbes.10297" }
+            },
+            [_vm._v("facebook")]
+          )
+        ])
       ])
     ])
   },
@@ -17110,6 +17116,7 @@ var lazyLoadInstance = new vanilla_lazyload__WEBPACK_IMPORTED_MODULE_0___default
   elements_selector: ".lazy"
 });
 new Vue({
+  el: '#app',
   components: {
     Search: _components_Search_vue__WEBPACK_IMPORTED_MODULE_1__["default"],
     PrimitiveForm: _components_PrimitiveForm_vue__WEBPACK_IMPORTED_MODULE_2__["default"],
@@ -17175,8 +17182,8 @@ window.onscroll = function () {
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(/*! D:\randomProjects\devPortfolio\source\_assets\js\main.js */"./source/_assets/js/main.js");
-module.exports = __webpack_require__(/*! D:\randomProjects\devPortfolio\source\_assets\sass\main.scss */"./source/_assets/sass/main.scss");
+__webpack_require__(/*! D:\randomProjects\adidas3559.github.io\source\_assets\js\main.js */"./source/_assets/js/main.js");
+module.exports = __webpack_require__(/*! D:\randomProjects\adidas3559.github.io\source\_assets\sass\main.scss */"./source/_assets/sass/main.scss");
 
 
 /***/ })
