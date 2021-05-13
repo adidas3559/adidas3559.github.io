@@ -14,7 +14,7 @@
             </div>
 
             <div class="contact__right-column">
-                <form class="needs-validation contactForm" @submit="onSubmit" method="post">
+                <form class="needs-validation contactForm" @submit.prevent="onSubmit" method="post">
                     <div class="contactForm__field">
                         <label for="name">Name</label>
                         <input type="text" name="name" v-model="fields.name" required/>
@@ -39,6 +39,10 @@
 
 <script>
 import axios from "axios";
+
+// Regular expression from W3C HTML5.2 input specification:
+// https://www.w3.org/TR/html/sec-forms.html#email-state-typeemail
+// var emailRegExp = /^[a-zA-Z0-9.!#$%&'*+\/=?^_`{|}~-]+@[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?(?:\.[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?)*$/;
 
 const querystring = require("querystring");
 

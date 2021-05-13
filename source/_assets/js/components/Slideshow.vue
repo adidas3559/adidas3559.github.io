@@ -4,8 +4,8 @@
             <div style="position: relative" v-for="i in [currentIndex]" :key="i">
                 <img :src="currentImg" />
                 <div class="slideshowButtons">
-                    <a class="prev" @click="prevBtn" href="#">&#10094; Previous</a>
-                    <a class="next" @click="nextBtn" href="#">Next &#10095;</a>
+                    <a class="prev text-5xl" @click="prevBtn" href="#">&#10094;</a>
+                    <a class="next text-5xl" @click="nextBtn" href="#">&#10095;</a>
                 </div>
                 
             </div>

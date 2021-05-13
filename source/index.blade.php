@@ -5,7 +5,11 @@
     @include('_modules.hero')
     @include('_modules.skills')
 
-    <div id="portfolio" class="portfolio">
+    <div id="portfolio" class="portfolio py-16 lg:py-32 bg-grey">
+        <h3 class="text-center">
+            Portfolio
+        </h3>
+
         <div class="portfolio__container">
             <project image="/assets/img/projects/ksu1.PNG">
                 <template v-slot:text>
@@ -13,7 +17,8 @@
                     <p>
                         Full stack web app for Bottega Tech final project. Uses React.js for the Front end with extremely modular design.
                         Built a custom API that keeps track of the different players and follows CRUD. No authorization currently.
-                        API connects to a very simple MySQL app I also made. All of these are deployed with Heroku.
+                        API connects to a very simple MySQL app I also made. All of these are deployed with Heroku. 
+                        The site and "players" section take time to load due to the apps being asleep. Created January 2020.
                         <br>
                         <a target="_blank" href="https://spf-bottega-capstone-rugby.herokuapp.com/">Bottega Final Project</a>
                         <br>
@@ -32,44 +37,53 @@
                 "/assets/img/projects/ksu3.PNG"]'>
                 </slideshow>
             </project>
-            <project image="/assets/img/witcher2.jpg">
+            <project image="/assets/img/projects/sorting2.png">
                 <template v-slot:text>
-                    <h4>Project 2</h4>
+                    <h4>Sorting Visualizer</h4>
                     <p>
-                        Lorem ipsiumm, Lorem ipsiumm, Lorem ipsiumm, Lorem ipsiumm, Lorem ipsiumm,
-                        Lorem ipsiumm, Lorem ipsiumm, Lorem ipsiumm,Lorem ipsiumm, Lorem ipsiumm,
-                        Lorem ipsiumm, Lorem ipsiumm, Lorem ipsiumm, Lorem ipsiumm,
+                        Classic Sorting Algorithm Visualizer. Created to practice sorting algorithms and js/css skills. 
+                        Mobile responsive, currently has 3 algorithms to visualize. 
+                        Had main view/ui react file, js files for the logic and a helper file for the visuals.
+                        Used react.js as framework and Netlify to deploy. Created May 2021.
+                        <br>
+                        <a target="_blank" href="https://spf-sorting-visualizer.netlify.app/">Soritng Visualizer</a>
+                        <br>
+                        <a target="_blank" href="https://github.com/adidas3559/Sorting-Visualizer">Github</a>
                     </p>
                     <ul>
-                        <li>Lorem ipsiumm,</li>
-                        <li>Lorem ipsiumm, Lorem ipsiumm, Lorem ipsiumm, Lorem ipsiumm, Lorem ipsiumm, Lorem ipsiumm, Lorem ipsiumm, Lorem ipsiumm, Lorem ipsiumm,</li>
-                        <li>Lorem ipsiumm,</li>
+                        <li>Practiced Sorting Algorithms</li>
+                        <li>Used JavaScript and css for visuals</li>
+                        <li>Deployed using Netlify</li>
                     </ul>
                 </template>
-                <slideshow :images='["https://cdn.pixabay.com/photo/2015/12/12/15/24/amsterdam-1089646_1280.jpg",
-                    "https://cdn.pixabay.com/photo/2016/02/17/23/03/usa-1206240_1280.jpg",
-                    "https://cdn.pixabay.com/photo/2015/05/15/14/27/eiffel-tower-768501_1280.jpg",
-                    "https://cdn.pixabay.com/photo/2016/12/04/19/30/berlin-cathedral-1882397_1280.jpg"]'>
+                <slideshow :images='["/assets/img/projects/sorting1.png",
+                    "/assets/img/projects/sorting2.png",
+                    "/assets/img/projects/sorting3.png",
+                    "/assets/img/projects/sorting4.png"]'>
                 </slideshow>
             </project>
-            <project image="/assets/img/witcher2.jpg">
+            <project image="/assets/img/projects/ambucs1.png">
                 <template v-slot:text>
-                    <h4>Project 2</h4>
+                    <h4>Monterey AMBUCS</h4>
                     <p>
-                        Lorem ipsiumm, Lorem ipsiumm, Lorem ipsiumm, Lorem ipsiumm, Lorem ipsiumm,
-                        Lorem ipsiumm, Lorem ipsiumm, Lorem ipsiumm,Lorem ipsiumm, Lorem ipsiumm,
-                        Lorem ipsiumm, Lorem ipsiumm, Lorem ipsiumm, Lorem ipsiumm,
+                        First professional website I've done from scratch. Emphasis on responsive behavior.
+                        Vue.js/Laravel php site, backend using company's in-house CMS.
+                        Design created by team designers, I implemented their design according to the project manager's timeline.
+                        Has functioning blog system with filters using company's CMS.
+                        Not fully released, going through final edits/company filling out blogs.
+                        Created May 2021.
+                        <br>
+                        <a target="_blank" href="https://dev-montereyambucs.myprimitive.cloud/">Dev Site</a>
                     </p>
                     <ul>
-                        <li>Lorem ipsiumm,</li>
-                        <li>Lorem ipsiumm, Lorem ipsiumm, Lorem ipsiumm, Lorem ipsiumm, Lorem ipsiumm, Lorem ipsiumm, Lorem ipsiumm, Lorem ipsiumm, Lorem ipsiumm,</li>
-                        <li>Lorem ipsiumm,</li>
+                        <li>Vue.js/Laravel</li>
+                        <li>Compay's in-house CMS</li>
+                        <li>Worked Remotely with team of Designers/Project Managers</li>
                     </ul>
                 </template>
-                <slideshow :images='["https://cdn.pixabay.com/photo/2015/12/12/15/24/amsterdam-1089646_1280.jpg",
-                    "https://cdn.pixabay.com/photo/2016/02/17/23/03/usa-1206240_1280.jpg",
-                    "https://cdn.pixabay.com/photo/2015/05/15/14/27/eiffel-tower-768501_1280.jpg",
-                    "https://cdn.pixabay.com/photo/2016/12/04/19/30/berlin-cathedral-1882397_1280.jpg"]'>
+                <slideshow :images='["/assets/img/projects/ambucs1.png",
+                    "/assets/img/projects/ambucs2.png",
+                    "/assets/img/projects/ambucs3.png"]'>
                 </slideshow>
             </project>
         </div>
@@ -77,9 +91,9 @@
     </div>
 
 
-    <div id="contact-me">
+    <!-- <div id="contact-me">
         <contact></contact>
-    </div>
+    </div> -->
 
     
 

@@ -25,6 +25,74 @@
         .hero-text {
             max-width: 90%;
 
+            // h4 {
+            //     animation: rollUp;
+            //     animation-duration: 2s;
+            //     animation-delay: .5s;
+            // }
+
+            .rollBoi1{
+                animation: rollUp;
+                animation-duration: 2s;
+                animation-delay: 1s;
+            }
+
+            .rollBoi2 {
+                animation: rollUp;
+                animation-duration: 2s;
+                animation-delay: 2s;
+            }
+
+            .rollBoi3 {
+                animation: rollUp;
+                animation-duration: 2s;
+                animation-delay: 3s;
+            }
+
+            .rollBoi4 {
+                animation: rollUp;
+                animation-duration: 2s;
+                animation-delay: 4s;
+            }
+
+            .fadeInBoi1 {
+                animation: fadeInBoi;
+                animation-duration: 3s;
+                animation-delay: 0;
+            }
+
+            .fadeInBoi2 {
+                animation: fadeInBoi;
+                animation-duration: 4s;
+                animation-delay: 0;
+            }
+
+            .fadeInBoi3 {
+                animation: fadeInBoi;
+                animation-duration: 6s;
+                animation-delay: 0;
+            }
+
+            .fadeInBoi4 {
+                animation: fadeInBoi;
+                animation-duration: 8s;
+                animation-delay: 0;
+            }
+
+            h4 {
+                margin: 0;
+            }
+
+            .heroSpan {
+                margin-left: 57px;
+            }
+
+            // span {
+            //     animation: rollUp;
+            //     animation-duration: 1s;
+            //     animation-delay: .5s;
+            // }
+
             @media screen and (min-width: 764px) {
                 max-width: 375px;
             }

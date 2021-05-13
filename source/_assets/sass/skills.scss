@@ -1,5 +1,5 @@
 ﻿.skills {
-    background-color: #f9f9f9;
+    // background-color: #f9f9f9;
 
     &.active {
         .skills__right-column {
@@ -100,7 +100,6 @@
         &__text-container {
             max-width: 90%;
             text-align: center;
-
         }
     }
 
@@ -140,6 +139,18 @@
                 height: 100%;
                 transition: .3s;
             }
+        }
+    }
+
+    &__image-container {
+        display: flex;
+        justify-content: center;
+
+        img {
+            height: 300px;
+            // width: 100%;
+            object-fit: contain;
+            border-radius: 10px;
         }
     }
 }

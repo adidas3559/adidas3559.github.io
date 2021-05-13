@@ -9,6 +9,8 @@
 
     &__container {
         display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
         // height: 100%;
 
         ul {
@@ -26,10 +28,6 @@
     }
 }
 
-.project__item {
-    width: 50%;
-}
-
 .project {
     position: fixed;
     height: 100%;
@@ -45,6 +43,13 @@
         justify-content: center;
         align-items: center;  
         height: 100%;  
+    }
+
+    &__item {
+        width: 500px;
+        max-width: 90%;
+        margin: 20px;
+        border: 1px solid#007790;;
     }
 
     .projectModal {

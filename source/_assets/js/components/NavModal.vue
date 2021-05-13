@@ -80,8 +80,10 @@
                         <a href="#about-me" @click="toggleNav">About Me</a>
                         <a href="#skills" @click="toggleNav">Skills</a>
                         <a href="#portfolio" @click="toggleNav">Portfolio</a>
-                        <a href="#">Resume</a>
-                        <a href="#contact-me" @click="toggleNav">Contact Me</a>
+                        <a href="#" @click="toggleNav">Resume</a>
+                        <a target="_blank" href="https://github.com/adidas3559" @click="toggleNav">Github</a>
+                        <a target="_blank" href="https://www.linkedin.com/in/stephen-forbes-58880a121/" @click="toggleNav">LinkedIn</a>
+                        <a href="mailTo:forbes3559@gmail.com" @click="toggleNav">Contact Me</a>
                     </div>
                 </div>
             </div>
