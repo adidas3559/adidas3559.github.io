@@ -1,7 +1,7 @@
 <section>
     <div class="hero" id="hero">
         <div class="hero__container">
-            <div class="hero__left-column">
+            <div class="hero__left-column mt-16 lg:mt-0">
                 <div class="hero-text">
                     <h1 style="margin-bottom: 0;">Hello<span class="secondaryColor">!</span></h1>
                     <h1 style="margin-top: 0;">I'm Stephen Forbes<span class="primaryColor">.</span></h1>
