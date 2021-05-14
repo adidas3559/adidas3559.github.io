@@ -28,7 +28,7 @@
         </script>
         <!-- Production:  -->
         
-        <link rel="stylesheet" href="/assets/build/css/main.css?id=19c3eb8ab69a190373cd">
+        <link rel="stylesheet" href="/assets/build/css/main.css?id=4494c8534a5ee1f3f78b">
     </head>
 
     <body>
@@ -65,7 +65,7 @@
                     <br><br><br>
                     <div class="rollBoi4 fadeInBoi4 text-gray-600">
                         <h4>Info:</h4>
-                        <a href="/assets/img/Resume2021.pdf" download="Stephen-Forbes-Resume">Resume</a> &#x2022;
+                        <a href="/assets/img/Resume2021v2.pdf" download="Stephen-Forbes-Resume">Resume</a> &#x2022;
                         <a target="_blank" href="https://github.com/adidas3559">Github</a> &#x2022;
                         <a target="_blank" href="https://www.linkedin.com/in/stephen-forbes-58880a121/">LinkedIn</a> &#x2022;
                         <a href="mailTo:forbes3559@gmail.com">Contact Me</a>
@@ -112,11 +112,11 @@
                 <p>
                     <br>
                     I have a bachelor's in Computer Science as well as attended a year long Web Developer course from <a target="_blank" href="https://bottega.tech/">Bottega Tech</a>.
-                    Bottega focused largely on front end development with a focus on React Devlopment including state management and redux.
+                    Bottega mostly taught front end development with a focus on React Devlopment including state management and redux.
                     It also had decent sized sections on UML and PostgreSQL.
                     <br><br>
-                    K-State was a more holistic education, with a focus on Object Oriented Programming using Java and C# using Visual Studio.
-                    It also largely focused on Data Structures and Logic, such as a Data Structures and Algorithms class, Graph Theory, Proving Theorems, and General Logic Classes.
+                    K-State was a more holistic education, with a focus on Object Oriented Programming using Java and C# in Visual Studio.
+                    It also largely focused on Data Structures and Logic, such as a Data Structures and Algorithms class, graph theory, proving theorems, and general logic classes.
                     A huge part of the education was understanding that all languages and frameworks ultimately can be used to solve the same problems,
                     and a good developer can use whichever tools best fits a job. Skills should be transferable from project to project.
                 </p>
@@ -320,6 +320,31 @@
                 <slideshow :images='["/assets/img/projects/ambucs1.PNG",
                     "/assets/img/projects/ambucs2.PNG",
                     "/assets/img/projects/ambucs3.PNG"]'>
+                </slideshow>
+            </project>
+            <project image="/assets/img/projects/bidding1.PNG">
+                <template v-slot:text>
+                    <h4>C# Bidding Project</h4>
+                    <p>
+                        C# bidding app made in Visual Studio. Consists of a front end clients and back end server.
+                        By having the server running, multiple front end clients can be running and bid on the same items and see each others bids in real time.
+                        Server can end the bidding war on any item and all the clients will be alerted with who won.
+                        Not connected to SQL Database, all items are in C#. Uses UML Diagrams to plan out the apps.
+                        Created 2019.
+                        <br>
+                        <a target="_blank" href="https://github.com/adidas3559/CollegeBiddingProject">Github</a>
+                    </p>
+                    <ul>
+                        <li>C# in Visual Studio</li>
+                        <li>Server can service multiple clients</li>
+                        <li>Uses Web Sockets to immediately update clients info on items</li>
+                        <li>Created UML Diagrams to map out apps</li>
+                    </ul>
+                </template>
+                <slideshow :images='["/assets/img/projects/bidding1.PNG",
+                    "/assets/img/projects/bidding2.PNG",
+                    "/assets/img/projects/bidding3.PNG",
+                    "/assets/img/projects/bidding4.PNG"]'>
                 </slideshow>
             </project>
         </div>

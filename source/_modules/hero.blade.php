@@ -27,7 +27,7 @@
                     <br><br><br>
                     <div class="rollBoi4 fadeInBoi4 text-gray-600">
                         <h4>Info:</h4>
-                        <a href="/assets/img/Resume2021.pdf" download="Stephen-Forbes-Resume">Resume</a> &#x2022;
+                        <a href="/assets/img/Resume2021v2.pdf" download="Stephen-Forbes-Resume">Resume</a> &#x2022;
                         <a target="_blank" href="https://github.com/adidas3559">Github</a> &#x2022;
                         <a target="_blank" href="https://www.linkedin.com/in/stephen-forbes-58880a121/">LinkedIn</a> &#x2022;
                         <a href="mailTo:forbes3559@gmail.com">Contact Me</a>

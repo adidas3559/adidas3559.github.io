@@ -32,11 +32,11 @@
                 <p>
                     <br>
                     I have a bachelor's in Computer Science as well as attended a year long Web Developer course from <a target="_blank" href="https://bottega.tech/">Bottega Tech</a>.
-                    Bottega focused largely on front end development with a focus on React Devlopment including state management and redux.
+                    Bottega mostly taught front end development with a focus on React Devlopment including state management and redux.
                     It also had decent sized sections on UML and PostgreSQL.
                     <br><br>
-                    K-State was a more holistic education, with a focus on Object Oriented Programming using Java and C# using Visual Studio.
-                    It also largely focused on Data Structures and Logic, such as a Data Structures and Algorithms class, Graph Theory, Proving Theorems, and General Logic Classes.
+                    K-State was a more holistic education, with a focus on Object Oriented Programming using Java and C# in Visual Studio.
+                    It also largely focused on Data Structures and Logic, such as a Data Structures and Algorithms class, graph theory, proving theorems, and general logic classes.
                     A huge part of the education was understanding that all languages and frameworks ultimately can be used to solve the same problems,
                     and a good developer can use whichever tools best fits a job. Skills should be transferable from project to project.
                 </p>

@@ -86,6 +86,31 @@
                     "/assets/img/projects/ambucs3.PNG"]'>
                 </slideshow>
             </project>
+            <project image="/assets/img/projects/bidding1.PNG">
+                <template v-slot:text>
+                    <h4>C# Bidding Project</h4>
+                    <p>
+                        C# bidding app made in Visual Studio. Consists of a front end clients and back end server.
+                        By having the server running, multiple front end clients can be running and bid on the same items and see each others bids in real time.
+                        Server can end the bidding war on any item and all the clients will be alerted with who won.
+                        Not connected to SQL Database, all items are in C#. Uses UML Diagrams to plan out the apps.
+                        Created 2019.
+                        <br>
+                        <a target="_blank" href="https://github.com/adidas3559/CollegeBiddingProject">Github</a>
+                    </p>
+                    <ul>
+                        <li>C# in Visual Studio</li>
+                        <li>Server can service multiple clients</li>
+                        <li>Uses Web Sockets to immediately update clients info on items</li>
+                        <li>Created UML Diagrams to map out apps</li>
+                    </ul>
+                </template>
+                <slideshow :images='["/assets/img/projects/bidding1.PNG",
+                    "/assets/img/projects/bidding2.PNG",
+                    "/assets/img/projects/bidding3.PNG",
+                    "/assets/img/projects/bidding4.PNG"]'>
+                </slideshow>
+            </project>
         </div>
         <!-- if you need to add more, add another container -->
     </div>
