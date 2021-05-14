@@ -168,6 +168,7 @@
 
 
 .hoverActive {
-    filter: brightness(30%);
+    filter: brightness(.3);
+    -webkit-filter: brightness(.3);
     transition: 1s;
 }
