@@ -11,6 +11,30 @@
         </h3>
 
         <div class="portfolio__container">
+            <project image="/assets/img/projects/ambucs1.PNG">
+                <template v-slot:text>
+                    <h4>Monterey AMBUCS</h4>
+                    <p>
+                        First professional website I've done from scratch. Emphasis on responsive behavior.
+                        Vue.js/Laravel php site, backend using company's in-house CMS.
+                        Design created by team designers, I implemented their design according to the project manager's timeline.
+                        Has functioning blog system with filters using company's CMS.
+                        Not fully released, going through final edits/company filling out blogs.
+                        Created May 2021.
+                        <br>
+                        <a target="_blank" href="https://montereyambucs.org/">Monterey Ambucs</a>
+                    </p>
+                    <ul>
+                        <li>Vue.js/Laravel</li>
+                        <li>Compay's in-house CMS</li>
+                        <li>Worked Remotely with team of Designers/Project Managers</li>
+                    </ul>
+                </template>
+                <slideshow :images='["/assets/img/projects/ambucs1.PNG",
+                    "/assets/img/projects/ambucs2.PNG",
+                    "/assets/img/projects/ambucs3.PNG"]'>
+                </slideshow>
+            </project>
             <project image="/assets/img/projects/ksu1.PNG">
                 <template v-slot:text>
                     <h4>KSU Rugby React.js + Node.js + MySQL</h4>
@@ -60,30 +84,6 @@
                     "/assets/img/projects/sorting2.PNG",
                     "/assets/img/projects/sorting3.PNG",
                     "/assets/img/projects/sorting4.PNG"]'>
-                </slideshow>
-            </project>
-            <project image="/assets/img/projects/ambucs1.PNG">
-                <template v-slot:text>
-                    <h4>Monterey AMBUCS</h4>
-                    <p>
-                        First professional website I've done from scratch. Emphasis on responsive behavior.
-                        Vue.js/Laravel php site, backend using company's in-house CMS.
-                        Design created by team designers, I implemented their design according to the project manager's timeline.
-                        Has functioning blog system with filters using company's CMS.
-                        Not fully released, going through final edits/company filling out blogs.
-                        Created May 2021.
-                        <br>
-                        <a target="_blank" href="https://dev-montereyambucs.myprimitive.cloud/">Dev Site</a>
-                    </p>
-                    <ul>
-                        <li>Vue.js/Laravel</li>
-                        <li>Compay's in-house CMS</li>
-                        <li>Worked Remotely with team of Designers/Project Managers</li>
-                    </ul>
-                </template>
-                <slideshow :images='["/assets/img/projects/ambucs1.PNG",
-                    "/assets/img/projects/ambucs2.PNG",
-                    "/assets/img/projects/ambucs3.PNG"]'>
                 </slideshow>
             </project>
             <project image="/assets/img/projects/bidding1.PNG">
