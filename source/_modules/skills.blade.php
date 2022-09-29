@@ -106,7 +106,7 @@
                 </div>
                 <p>
                     I'm a proud Kansan who's been coding for roughly 5 years. 
-                    I have bachelor's degree from Kansas State and work as a front-end contractor for <a target="_blank" href="https://www.leadwithprimitive.com/">Primitive</a>.
+                    I have bachelor's degree from Kansas State and work as a front-end contractor for <a target="_blank" href="https://www.productiveedge.com/">Productive Edge</a>.
                     Most of my experience is in Front End and in Web Development,
                     but I've had plenty of experience in school with Visual Studio apps, SQL apps, and console apps.
                     I'm most comfortable in JavaScript but was taught in Java and C# and am excited to return to those as well as get more comfortable with python and different flavors of SQL.
