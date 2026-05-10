@@ -15,12 +15,20 @@ const style = css`
     grid-template-columns: 1fr 1fr;
     gap: 16px;
   }
-  @media (max-width: 768px) {
+  @media (max-width: 992px) {
     .skills-content {
       padding: 24px;
     }
     .skills-grid {
       grid-template-columns: 1fr;
+    }
+  }
+  @media (max-width: 568px) {
+    .skills-content {
+      padding: 16px;
+    }
+    .skills-grid {
+      gap: 28px;
     }
   }
 `

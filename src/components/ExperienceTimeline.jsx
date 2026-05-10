@@ -56,7 +56,7 @@ const style = css`
   .exp-timeline__title {
     font-family: ${typography.Display};
     font-weight: 800;
-    font-size: 24px;
+    font-size: clamp(18px, 4vw, 24px);
     letter-spacing: -0.5px;
     line-height: 1.1;
     color: ${colors.bright};

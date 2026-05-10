@@ -11,7 +11,7 @@ const style = css`
   }
   @media (max-width: 768px) {
     .readme-content {
-      padding: 24px;
+      padding: 24px 16px;
     }
   }
 `

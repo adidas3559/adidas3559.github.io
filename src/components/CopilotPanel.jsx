@@ -24,7 +24,7 @@ const style = css`
   .copilot-panel {
     position: fixed;
     right: 0;
-    top: 28px;
+    top: var(--menu-height);
     bottom: 22px;
     width: 350px;
     background: ${colors.bg};
@@ -34,7 +34,15 @@ const style = css`
     z-index: 800;
     /* animation: copilot-slide-in 0.18s ease; */
   }
+  @media (max-width: 1100px) {
+    .copilot-panel {
+      left: 0;
+      width: 100%;
+      border-left: none;
+    }
+  }
   .copilot-panel__header {
+    background-color: ${colors.bg2};
     display: flex;
     align-items: center;
     gap: 7px;
@@ -77,6 +85,7 @@ const style = css`
     }
   }
   .copilot-panel__workspace {
+    background-color: ${colors.bg2};
     display: flex;
     align-items: center;
     gap: 10px;
@@ -168,7 +177,7 @@ const style = css`
     cursor: pointer;
     font-family: inherit;
     font-size: 11px;
-    color: ${colors.text};
+    color: ${colors.dim};
     line-height: 1.45;
     opacity: 0;
     animation: copilot-fade-up 0.15s ease forwards;
@@ -239,6 +248,29 @@ const style = css`
     transition: opacity 0.12s;
     &:hover { opacity: 0.82; }
     &:disabled { opacity: 0.35; cursor: default; }
+  }
+  @media (max-width: 768px) {
+    .copilot-panel__avatar {
+      width: 48px;
+      height: 48px;
+    }
+    .copilot-panel__greeting {
+      font-size: 13px;
+      margin: 10px 0 0;
+    }
+    .copilot-panel__subtitle {
+      font-size: 11px;
+      margin: 5px 0 16px;
+    }
+    .copilot-panel__body {
+      padding: 16px 14px 16px;
+    }
+    .copilot-panel__suggestions {
+      gap: 6px
+    }
+    .copilot-panel__suggestion {
+      padding: 8px 9px;
+    }
   }
   .copilot-panel__disclaimer {
     font-size: 10px;

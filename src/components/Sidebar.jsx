@@ -18,6 +18,11 @@ const style = css`
     flex-shrink: 0;
     overflow: hidden;
   }
+  @media (max-width: 1100px) {
+    .sidebar {
+      display: none;
+    }
+  }
   .sidebar__header {
     padding: 14px 16px 10px;
     font-size: 11px;

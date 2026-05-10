@@ -128,6 +128,11 @@ const style = css`
     user-select: none;
     flex-shrink: 0;
   }
+  @media (max-width: 1100px) {
+    .menu-bar {
+      display: none;
+    }
+  }
   .menu-bar__btn {
     height: 22px;
     padding: 0 8px;

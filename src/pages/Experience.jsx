@@ -12,7 +12,7 @@ const style = css`
   }
   @media (max-width: 768px) {
     .experience-content {
-      padding: 24px;
+      padding: 24px 16px;
     }
   }
 `

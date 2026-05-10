@@ -12,6 +12,8 @@ const style = css`
     gap: 14px;
     transition: background 0.15s ease, transform 0.15s ease;
     cursor: default;
+    min-width: 0;
+    overflow: hidden;
   }
   .project-card:hover {
     background: ${colors.bg3};
@@ -22,6 +24,12 @@ const style = css`
     align-items: center;
     justify-content: space-between;
     gap: 12px;
+  }
+  @media (max-width: 568px) {
+    .project-card__top {
+      flex-direction: column;
+      align-items: flex-start;
+    }
   }
   .project-card__meta {
     display: flex;

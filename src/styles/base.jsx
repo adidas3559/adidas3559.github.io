@@ -3,6 +3,14 @@ import { Global, css } from '@emotion/react'
 import { colors } from './colors.jsx'
 
 const style = css`
+  :root {
+    --menu-height: 28px;
+  }
+  @media (max-width: 1100px) {
+    :root {
+      --menu-height: 44px;
+    }
+  }
   *,
   *::before,
   *::after {
@@ -40,7 +48,7 @@ const style = css`
     display: flex;
     flex-direction: row;
     align-items: flex-start;
-    padding-top: 28px;
+    padding-top: var(--menu-height);
   }
   p {
     margin: 0;

@@ -60,6 +60,14 @@ const style = css`
     text-align: right;
     flex-shrink: 0;
   }
+  @media (max-width: 568px) {
+    .skill-card {
+      background: none;
+      border: none;
+      border-radius: 0;
+      padding: 0;
+    }
+  }
 `
 
 function SkillCard({ title, skills = [] }) {

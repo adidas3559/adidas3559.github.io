@@ -34,10 +34,13 @@ const style = css`
   }
   @media (max-width: 768px) {
     .page-heading {
-      padding: 40px 24px 32px;
+      padding: 20px 16px 8px;
     }
     .page-heading__title {
       letter-spacing: -1px;
+    }
+    .page-heading__breadcrumb {
+      margin: 0 0 16px;
     }
   }
 `

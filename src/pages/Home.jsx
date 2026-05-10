@@ -23,7 +23,7 @@ const style = css`
   .home-name {
     font-family: ${typography.Display};
     font-weight: 800;
-    font-size: clamp(48px, 11vw, 68px);
+    font-size: clamp(38px, 11vw, 68px);
     line-height: 0.9;
     letter-spacing: -3px;
     margin: 0 0 36px;
@@ -76,8 +76,10 @@ const style = css`
   }
 
   @media (max-width: 768px) {
-    .home { padding: 48px 24px 64px; }
-    .home-name { letter-spacing: -1.5px; }
+    .home { padding: 24px 16px 64px; }
+    .home-name { letter-spacing: -1.5px; margin-bottom: 12px; }
+    .home-roles { margin-bottom: 24px; }
+    .home-tagline { margin: 0 0 20px; }
   }
 `
 

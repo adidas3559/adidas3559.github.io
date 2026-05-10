@@ -170,7 +170,7 @@ const style = css`
   }
   @media (max-width: 768px) {
     .contact-content {
-      padding: 24px;
+      padding: 24px 16px;
     }
     .contact-grid {
       grid-template-columns: 1fr;

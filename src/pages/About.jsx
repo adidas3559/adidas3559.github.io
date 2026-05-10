@@ -90,7 +90,7 @@ const style = css`
   }
   @media (max-width: 768px) {
     .about-content {
-      padding: 24px;
+      padding: 24px 16px;
     }
     .about-focus-grid {
       grid-template-columns: 1fr;

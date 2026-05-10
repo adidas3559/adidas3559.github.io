@@ -1,4 +1,4 @@
-import { useEffect } from 'react'
+import { useEffect, useState } from 'react'
 import { Global, css } from '@emotion/react'
 import { Outlet, useRouterState, useNavigate } from '@tanstack/react-router'
 import { GlobalColors, GlobalFonts, GlobalBase, colors } from '../styles'
@@ -13,6 +13,7 @@ import CommandPalette from './CommandPalette.jsx'
 import { TerminalProvider, useTerminal } from '../utils/terminalContext.jsx'
 import Terminal, { TERMINAL_HEIGHT } from './Terminal.jsx'
 import MenuBar from './MenuBar.jsx'
+import MobileMenuBar from './MobileMenuBar.jsx'
 import { SidebarProvider, useSidebar } from '../utils/sidebarContext.jsx'
 import { TabsProvider, useTabs } from '../utils/tabsContext.jsx'
 import { CopilotProvider, useCopilot } from '../utils/copilotContext.jsx'
@@ -34,6 +35,17 @@ const style = css`
     min-height: 0;
   }
 `
+
+function useIsMobile() {
+  const [isMobile, setIsMobile] = useState(() => window.matchMedia('(max-width: 1100px)').matches)
+  useEffect(() => {
+    const mq = window.matchMedia('(max-width: 1100px)')
+    const handler = (e) => setIsMobile(e.matches)
+    mq.addEventListener('change', handler)
+    return () => mq.removeEventListener('change', handler)
+  }, [])
+  return isMobile
+}
 
 function LayoutInner() {
   const { location } = useRouterState()
@@ -65,6 +77,7 @@ function LayoutInner() {
   const { isOpen: terminalOpen } = useTerminal()
   const { isVisible: sidebarVisible } = useSidebar()
   const { isOpen: copilotOpen } = useCopilot()
+  const isMobile = useIsMobile()
 
   return (
     <CommandPaletteProvider>
@@ -73,11 +86,12 @@ function LayoutInner() {
       <GlobalFonts />
       <Global styles={style} />
       <MenuBar />
+      <MobileMenuBar />
       <ActivityBar />
       {sidebarVisible && <Sidebar />}
       <div
         className="layout-main"
-        style={{ height: `calc(100svh - 28px - 22px${terminalOpen ? ` - ${TERMINAL_HEIGHT}px` : ''})` }}
+        style={{ height: `calc(100svh - var(--menu-height) - 22px${terminalOpen ? ` - ${TERMINAL_HEIGHT}px` : ''})` }}
       >
         {tabs.length > 0 && (
           <TabBar tabs={tabs} activeTab={location.pathname} onClose={handleClose} />
@@ -88,7 +102,7 @@ function LayoutInner() {
         </div>
       </div>
       <StatusBar />
-      <Terminal />
+      {!isMobile && <Terminal />}
       <CommandPalette />
       {copilotOpen && <CopilotPanel />}
     </CommandPaletteProvider>

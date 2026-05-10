@@ -20,6 +20,11 @@ const style = css`
     flex-shrink: 0;
     z-index: 10;
   }
+  @media (max-width: 1100px) {
+    .activity-bar {
+      display: none;
+    }
+  }
   .activity-bar__top {
     flex: 1;
     display: flex;

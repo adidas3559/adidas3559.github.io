@@ -36,6 +36,11 @@ const style = css`
     scrollbar-width: none;
     &::-webkit-scrollbar { display: none; }
   }
+  @media (max-width: 768px) {
+    .tab-bar {
+      display: none;
+    }
+  }
   .tab-bar__tab {
     display: inline-flex;
     align-items: center;

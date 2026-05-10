@@ -40,6 +40,26 @@ const style = css`
     letter-spacing: 0.18em;
     text-transform: uppercase;
   }
+  @media (max-width: 1100px) {
+    .stat-bar {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+    }
+    .stat-bar__item {
+      border-right: none;
+      border-bottom: none;
+      padding: 32px 16px;
+    }
+    .stat-bar__item:nth-child(odd) {
+      border-right: 1px solid ${colors.bg};
+    }
+    .stat-bar__item:nth-child(-n+2) {
+      border-bottom: 1px solid ${colors.bg};
+    }
+    .stat-bar__value {
+      font-size: 36px;
+    }
+  }
 `
 
 function StatBar({ stats = [] }) {
