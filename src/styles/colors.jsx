@@ -6,6 +6,7 @@ export const colors = {
   bg2:    '#252526',
   bg3:    '#2d2d2d',
   bg4:    '#333333',
+  bg5:    'rgb(255 255 255 / 6%)',
   title:  '#1a1a2e',
   border: '#3c3c3c',
   text:   '#cccccc',

@@ -1,6 +1,7 @@
 import { Global, css } from '@emotion/react'
 import { useState, useEffect } from 'react'
 import { colors } from '../styles'
+import { useTerminal } from '../utils/terminalContext'
 
 const style = css`
   .status-bar {
@@ -50,6 +51,7 @@ function getTime() {
 
 function StatusBar() {
   const [time, setTime] = useState(getTime)
+  const { toggle } = useTerminal()
 
   useEffect(() => {
     const id = setInterval(() => setTime(getTime()), 10000)
@@ -61,6 +63,12 @@ function StatusBar() {
       <Global styles={style} />
       <div className="status-bar">
         <div className="status-bar__group">
+          <span className="status-bar__item" style={{ cursor: 'pointer' }} onClick={toggle}>
+            <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+              <rect x="2" y="4" width="20" height="16" rx="2"/>
+              <path d="M8 9l4 3-4 3M13 15h3"/>
+            </svg>
+          </span>
           <span className="status-bar__item">
             ⚠ 0
           </span>

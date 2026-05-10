@@ -11,6 +11,7 @@ import Skills from '../pages/Skills.jsx'
 import Experience from '../pages/Experience.jsx'
 import Contact from '../pages/Contact.jsx'
 import ReadMe from '../pages/ReadMe.jsx'
+import NoTabs from '../pages/NoTabs.jsx'
 
 const rootRoute = createRootRoute({
   component: Layout,
@@ -58,6 +59,12 @@ const readmeRoute = createRoute({
   component: ReadMe,
 })
 
+const noTabsRoute = createRoute({
+  getParentRoute: () => rootRoute,
+  path: '/no-tabs',
+  component: NoTabs,
+})
+
 const routeTree = rootRoute.addChildren([
   homeRoute,
   aboutRoute,
@@ -66,6 +73,7 @@ const routeTree = rootRoute.addChildren([
   skillsRoute,
   contactRoute,
   readmeRoute,
+  noTabsRoute,
 ])
 
 export const router = createRouter({ routeTree })
