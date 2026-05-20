@@ -103,12 +103,12 @@ const style = css`
 `
 
 const focusItems = [
-  { emoji: '🔧', text: 'Building scalable backend systems & AI integrations at EduVanceAI' },
-  { emoji: '🤖', text: 'Deep interest in NLP, LLMs & ML pipelines' },
-  { emoji: '🌱', text: 'Currently exploring RAG, MLOps & Vector Databases' },
-  { emoji: '💬', text: 'Talk to me about Python, APIs, Data Science' },
-  { emoji: '⚡', text: 'Making data stories non-data people actually get' },
-  { emoji: '✨', text: 'Always learning, always shipping' },
+  { emoji: '⚛️', text: 'Building homebuilder sites with React/Redux CMS architecture at Builder Designs' },
+  { emoji: '🤖', text: 'Engineered an AI ticket workflow that auto-fixes, diffs, and raises MRs via GitLab & Monday.com CLIs' },
+  { emoji: '🎨', text: 'Expert-level CSS — from SCSS to Tailwind to emotion' },
+  { emoji: '💬', text: 'Talk to me about React, TypeScript, component architecture, or Vue' },
+  { emoji: '📱', text: 'React Native for mobile, Node/Express for the backend layer' },
+  { emoji: '✨', text: 'Quick to ramp, quick to ship — and sent to the problem projects' },
 ]
 
 function About() {
@@ -125,12 +125,12 @@ function About() {
         <div className="about-content">
           <div className="card">
             <p className="about-bio">
-              Hi! I'm <strong>Stephen Forbes</strong>, a software developer living at the crossroads of{' '}
-              <strong>backend engineering</strong>, <strong>AI/ML</strong>, and <strong>data science</strong>.
-              I love building systems that are not just functional but genuinely{' '}
-              <strong>intelligent and scalable</strong>. Currently a{' '}
-              <strong>Junior Software Developer at EduVanceAI</strong>, building AI integrations and backend
-              systems that power learning experiences for thousands of users daily.
+              Hi! I'm <strong>Stephen Forbes</strong>, a front end developer with five years of experience
+              building <strong>production UIs</strong> across React, Vue, and React Native. I ramp up fast,
+              own tickets end-to-end with minimal direction, and have a track record of being sent into{' '}
+              <strong>problem projects</strong> to provide front end expertise and meet deadlines. Currently
+              at <strong>Builder Designs</strong> in Lenexa, KS, developing CMS-driven homebuilder
+              websites and an AI-powered support ticket workflow.
             </p>
           </div>
           <div className="card">
@@ -150,14 +150,11 @@ function About() {
               <div className="about-edu-header">
                 <span className="about-edu-name">
                   <span>🎓</span>
-                  SIES Graduate School of Technology
+                  Kansas State University
                 </span>
-                <span className="about-edu-years">2021 – 2025</span>
+                <span className="about-edu-years">2016 – 2020</span>
               </div>
-              <span className="about-edu-university">University of Mumbai</span>
-              <span className="about-edu-degree">Bachelor of Engineering in Computer Engineering</span>
-              <span className="about-edu-minors">Minors: Artificial Intelligence & Machine Learning (AI/ML)</span>
-              <span className="about-edu-gpa">GPA: 9.28</span>
+              <span className="about-edu-degree">Bachelor of Science in Computer Science</span>
             </div>
           </div>
         </div>

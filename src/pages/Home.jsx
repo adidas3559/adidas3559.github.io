@@ -94,23 +94,23 @@ function Home() {
           <span className="home-name__last">Forbes</span>
         </h1>
         <div className="home-roles">
-          <Pill text="Backend Engineer" color={colors.green} />
-          <Pill text="AI / ML Dev" color={colors.purple} />
-          <Pill text="Data Scientist" color={colors.blue} />
-          <Pill text="@ EduVanceAI" color={colors.pink} />
+          <Pill text="Front End Developer" color={colors.green} />
+          <Pill text="React · Vue · RN" color={colors.blue} />
+          <Pill text="5 Years Exp" color={colors.purple} />
+          <Pill text="@ Builder Designs" color={colors.pink} />
         </div>
         <p className="home-tagline">
           <Typewriter phrases={[
-            'Turning data into decisions 🧠',
-            'Exploring LLMs & RAG pipelines 🤖',
-            'Building intelligent systems 🔧',
-            'Always learning, always shipping ✨',
+            'Crafting pixel-perfect interfaces 🎨',
+            'React, Vue, React Native — fluent in all three ⚛️',
+            'Quick to ramp, quick to ship 🚀',
+            'Sent to the hard projects for a reason 🔧',
           ]} />
         </p>
         <p className="home-bio">
-          I live at the crossroads of <strong>backend engineering</strong>, AI/ML, and{' '}
-          <strong>data science</strong>. I build systems that are genuinely{' '}
-          <strong>intelligent and scalable</strong>.
+          Five years of turning <strong>designs into production UIs</strong>. I own tickets
+          end-to-end with minimal direction and have a track record of being dropped into{' '}
+          <strong>problem projects</strong> to get them across the finish line.
         </p>
         <NavLinks links={[
           { to: '/projects', label: 'Projects', emoji: '🗂️' },
@@ -118,10 +118,10 @@ function Home() {
           { to: '/contact',  label: 'Contact',  emoji: '✉️' },
         ]} />
         <StatBar stats={[
-          { value: '3+', label: 'Years' },
-          { value: '10+', label: 'Projects' },
-          { value: '∞',  label: 'Curiosity' },
-          { value: '↑',  label: 'Always Learning' },
+          { value: '5+',  label: 'Years' },
+          { value: '12+', label: 'Projects' },
+          { value: '100+', label: 'Sites Maintained' },
+          { value: '↑',   label: 'Always Shipping' },
         ]} />
       </main>
     </>

@@ -236,11 +236,11 @@ function Terminal() {
       case 'whoami':
         return [
           { text: 'Stephen Forbes', color: colors.bright },
-          '  Role      Full Stack Developer',
+          '  Role      Front End Developer',
           '  GitHub    github.com/adidas3559',
           '  Email     s.forbes@builderdesigns.com',
-          '  Stack     React · TypeScript · Node.js · Python · AWS',
-          '  Based in  Canada',
+          '  Stack     React · TypeScript · Vue · React Native · Node.js',
+          '  Based in  Lenexa, KS',
         ]
 
       case 'echo':
