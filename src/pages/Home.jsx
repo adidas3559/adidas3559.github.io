@@ -76,7 +76,7 @@ const style = css`
   }
 
   @media (max-width: 768px) {
-    .home { padding: 24px 16px 64px; }
+    .home { padding: 20px 16px 64px; }
     .home-name { letter-spacing: -1.5px; margin-bottom: 12px; }
     .home-roles { margin-bottom: 24px; }
     .home-tagline { margin: 0 0 20px; }
