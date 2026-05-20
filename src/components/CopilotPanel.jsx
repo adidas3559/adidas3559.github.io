@@ -1,7 +1,9 @@
-import { useState, useRef } from 'react'
+import { useState, useEffect, useRef } from 'react'
 import { Global, css } from '@emotion/react'
 import { colors } from '../styles'
 import { useCopilot } from '../utils/copilotContext'
+
+const MSG_LIMIT = 5
 
 const SUGGESTIONS = [
   { text: "Tell me about Stephen?" },
@@ -21,6 +23,10 @@ const style = css`
     from { opacity: 0; transform: translateY(10px); }
     to   { opacity: 1; transform: translateY(0);    }
   }
+  @keyframes copilot-blink {
+    0%, 100% { opacity: 1; }
+    50%       { opacity: 0.3; }
+  }
   .copilot-panel {
     position: fixed;
     right: 0;
@@ -32,7 +38,6 @@ const style = css`
     display: flex;
     flex-direction: column;
     z-index: 800;
-    /* animation: copilot-slide-in 0.18s ease; */
   }
   @media (max-width: 1100px) {
     .copilot-panel {
@@ -133,6 +138,11 @@ const style = css`
     scrollbar-width: thin;
     scrollbar-color: ${colors.bg4} transparent;
   }
+  .copilot-panel__body--chat {
+    align-items: stretch;
+    padding: 14px;
+    gap: 2px;
+  }
   .copilot-panel__avatar {
     width: 72px;
     height: 72px;
@@ -193,6 +203,44 @@ const style = css`
     color: ${colors.purple};
     line-height: 1;
   }
+  .copilot-msg {
+    max-width: 86%;
+    padding: 9px 12px;
+    border-radius: 10px;
+    font-size: 12px;
+    line-height: 1.6;
+    margin-bottom: 6px;
+    white-space: pre-wrap;
+    word-break: break-word;
+  }
+  .copilot-msg--user {
+    align-self: flex-end;
+    background: ${colors.bg3};
+    color: ${colors.text};
+    border: 1px solid ${colors.border};
+    border-bottom-right-radius: 3px;
+  }
+  .copilot-msg--assistant {
+    align-self: flex-start;
+    background: ${colors.purple + '18'};
+    border: 1px solid ${colors.purple + '33'};
+    color: ${colors.text};
+    border-bottom-left-radius: 3px;
+  }
+  .copilot-msg--loading {
+    padding: 12px 16px;
+  }
+  .copilot-typing span {
+    display: inline-block;
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: ${colors.purple};
+    margin: 0 2px;
+    animation: copilot-blink 1.2s ease infinite;
+    &:nth-child(2) { animation-delay: 0.2s; }
+    &:nth-child(3) { animation-delay: 0.4s; }
+  }
   .copilot-panel__input-area {
     flex-shrink: 0;
     padding: 10px 12px 0;
@@ -204,9 +252,6 @@ const style = css`
     border-radius: 8px;
     padding: 8px 10px 6px;
     transition: border-color 0.15s;
-    &:focus-within {
-      /* border-color: ${colors.purple + '88'}; */
-    }
   }
   .copilot-panel__textarea {
     width: 100%;
@@ -221,6 +266,10 @@ const style = css`
     display: block;
     &::placeholder {
       color: ${colors.dim};
+    }
+    &:disabled {
+      opacity: 0.45;
+      cursor: not-allowed;
     }
   }
   .copilot-panel__input-meta {
@@ -304,14 +353,80 @@ const CopilotIcon = () => (
 
 function CopilotPanel() {
   const { close } = useCopilot()
+  const [messages, setMessages] = useState([])
   const [input, setInput] = useState('')
-  const [msgsLeft] = useState(3)
+  const [isLoading, setIsLoading] = useState(false)
+  const [msgsLeft, setMsgsLeft] = useState(() => {
+    const stored = sessionStorage.getItem('copilot-msgs-left')
+    return stored !== null ? parseInt(stored, 10) : MSG_LIMIT
+  })
   const textareaRef = useRef(null)
+  const bodyRef = useRef(null)
 
-  function handleSuggestion(text) {
-    setInput(text)
-    textareaRef.current?.focus()
+  useEffect(() => {
+    if (bodyRef.current) {
+      bodyRef.current.scrollTop = bodyRef.current.scrollHeight
+    }
+  }, [messages, isLoading])
+
+  async function handleSend(text) {
+    const msg = (text ?? input).trim()
+    if (!msg || isLoading || msgsLeft <= 0) return
+
+    const chatUrl = import.meta.env.VITE_CHAT_URL
+    const newMessages = [...messages, { role: 'user', content: msg }]
+    setMessages(newMessages)
+    setInput('')
+    setIsLoading(true)
+
+    const newMsgsLeft = msgsLeft - 1
+    setMsgsLeft(newMsgsLeft)
+    sessionStorage.setItem('copilot-msgs-left', newMsgsLeft)
+
+    if (!chatUrl) {
+      setMessages(prev => [...prev, {
+        role: 'assistant',
+        content: "The chat backend isn't configured yet. In the meantime, feel free to reach out to Stephen directly at s.forbes@builderdesigns.com",
+      }])
+      setIsLoading(false)
+      return
+    }
+
+    try {
+      const res = await fetch(chatUrl, {
+        method: 'POST',
+        headers: { 'content-type': 'application/json' },
+        body: JSON.stringify({ messages: newMessages }),
+      })
+      const data = await res.json()
+      setMessages(prev => [...prev, { role: 'assistant', content: data.reply }])
+    } catch {
+      setMessages(prev => [...prev, {
+        role: 'assistant',
+        content: "Sorry, something went wrong. Try again or contact Stephen directly at s.forbes@builderdesigns.com",
+      }])
+    } finally {
+      setIsLoading(false)
+    }
   }
+
+  function handleClear() {
+    setMessages([])
+    setInput('')
+    sessionStorage.removeItem('copilot-msgs-left')
+    setMsgsLeft(MSG_LIMIT)
+  }
+
+  function handleKeyDown(e) {
+    if (e.key === 'Enter' && !e.shiftKey) {
+      e.preventDefault()
+      handleSend()
+    }
+  }
+
+  const isExhausted = msgsLeft <= 0
+  const canSend = input.trim().length > 0 && !isLoading && !isExhausted
+  const inChat = messages.length > 0
 
   return (
     <>
@@ -324,7 +439,7 @@ function CopilotPanel() {
             </svg>
           </span>
           <span className="copilot-panel__title">Stephen's AI Assistant</span>
-          <button className="copilot-panel__icon-btn" aria-label="edit">
+          <button className="copilot-panel__icon-btn" aria-label="new chat" onClick={handleClear} title="New chat">
             <PencilIcon />
           </button>
           <button className="copilot-panel__icon-btn" aria-label="close" onClick={close}>
@@ -342,28 +457,49 @@ function CopilotPanel() {
           </span>
         </div>
 
-        <div className="copilot-panel__body">
-          <div className="copilot-panel__avatar">
-            <CopilotIcon />
-          </div>
-          <p className="copilot-panel__greeting">Hi! I'm Stephen's Copilot 👋</p>
-          <p className="copilot-panel__subtitle">
-            Ask me anything about his projects, skills, experience, or achievements.
-          </p>
-
-          <div className="copilot-panel__suggestions">
-            {SUGGESTIONS.map((s, i) => (
-              <button
-                key={i}
-                className="copilot-panel__suggestion"
-                style={{ animationDelay: `${i * 0.06 + 0.08}s` }}
-                onClick={() => handleSuggestion(s.text)}
-              >
-                <span className="copilot-panel__suggestion-star">✦</span>
-                {s.text}
-              </button>
-            ))}
-          </div>
+        <div
+          ref={bodyRef}
+          className={`copilot-panel__body${inChat ? ' copilot-panel__body--chat' : ''}`}
+        >
+          {!inChat ? (
+            <>
+              <div className="copilot-panel__avatar">
+                <CopilotIcon />
+              </div>
+              <p className="copilot-panel__greeting">Hi! I'm Stephen's Copilot 👋</p>
+              <p className="copilot-panel__subtitle">
+                Ask me anything about his projects, skills, experience, or achievements.
+              </p>
+              <div className="copilot-panel__suggestions">
+                {SUGGESTIONS.map((s, i) => (
+                  <button
+                    key={i}
+                    className="copilot-panel__suggestion"
+                    style={{ animationDelay: `${i * 0.06 + 0.08}s` }}
+                    onClick={() => handleSend(s.text)}
+                  >
+                    <span className="copilot-panel__suggestion-star">✦</span>
+                    {s.text}
+                  </button>
+                ))}
+              </div>
+            </>
+          ) : (
+            <>
+              {messages.map((m, i) => (
+                <div key={i} className={`copilot-msg copilot-msg--${m.role}`}>
+                  {m.content}
+                </div>
+              ))}
+              {isLoading && (
+                <div className="copilot-msg copilot-msg--assistant copilot-msg--loading">
+                  <span className="copilot-typing">
+                    <span /><span /><span />
+                  </span>
+                </div>
+              )}
+            </>
+          )}
         </div>
 
         <div className="copilot-panel__input-area">
@@ -372,13 +508,25 @@ function CopilotPanel() {
               ref={textareaRef}
               className="copilot-panel__textarea"
               rows={2}
-              placeholder="Ask about Stephen's projects, experience, skills..."
+              placeholder={
+                isExhausted
+                  ? 'Message limit reached for this session'
+                  : 'Ask about Stephen\'s projects, experience, skills...'
+              }
               value={input}
               onChange={e => setInput(e.target.value)}
+              onKeyDown={handleKeyDown}
+              disabled={isExhausted || isLoading}
             />
             <div className="copilot-panel__input-meta">
-              <span className="copilot-panel__msgs-left">{msgsLeft} msgs left</span>
-              <button className="copilot-panel__send" disabled={!input.trim()}>
+              <span className="copilot-panel__msgs-left">
+                {isExhausted ? 'No msgs left' : `${msgsLeft} msg${msgsLeft === 1 ? '' : 's'} left`}
+              </span>
+              <button
+                className="copilot-panel__send"
+                disabled={!canSend}
+                onClick={() => handleSend()}
+              >
                 <SendIcon />
               </button>
             </div>
