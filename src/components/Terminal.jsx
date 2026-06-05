@@ -116,7 +116,7 @@ const FILES = {
   'skills.json':               { route: '/skills' },
   'contact.css':               { route: '/contact' },
   'README.md':                 { route: '/readme' },
-  'Stephen_Forbes_Resume.pdf': { href: '/Stephen_Forbes_Resume.pdf' },
+  'Stephen_Forbes_Resume.pdf': { route: '/resume' },
 }
 
 function Terminal() {

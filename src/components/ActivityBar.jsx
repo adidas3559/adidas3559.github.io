@@ -1,5 +1,6 @@
 import { useState, useRef, useEffect } from 'react'
 import { Global, css } from '@emotion/react'
+import { useNavigate } from '@tanstack/react-router'
 import { colors } from '../styles'
 import { useCommandPalette } from '../utils/commandPaletteContext'
 import { useCopilot } from '../utils/copilotContext'
@@ -377,14 +378,14 @@ const QUICK_ACTIONS = [
     shortcut: 'Ctrl+`',
     action: 'terminal',
   },
-  {
-    icon: <span style={{ fontSize: 13 }}>✦</span>,
-    label: 'Copilot Chat',
-    action: 'copilot',
-  },
+  // {
+  //   icon: <span style={{ fontSize: 13 }}>✦</span>,
+  //   label: 'Copilot Chat',
+  //   action: 'copilot',
+  // },
   {
     icon: <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="12" y1="18" x2="12" y2="12"/><line x1="9" y1="15" x2="15" y2="15"/></svg>,
-    label: 'Download Resume',
+    label: 'View Resume',
     action: 'resume',
   },
   {
@@ -413,16 +414,14 @@ function SettingsPopup({ popupRef, onAction }) {
       </div>
       {QUICK_ACTIONS.map((item) =>
         item.action === 'resume' ? (
-          <a
+          <div
             key={item.action}
             className="settings-popup__action"
-            href="/Stephen_Forbes_Resume.pdf"
-            download="Stephen_Forbes_Resume.pdf"
-            onClick={() => onAction('close')}
+            onClick={() => onAction('resume')}
           >
             <span className="settings-popup__action-icon">{item.icon}</span>
             <span className="settings-popup__action-label">{item.label}</span>
-          </a>
+          </div>
         ) : (
           <div
             key={item.action}
@@ -457,6 +456,7 @@ function SettingsPopup({ popupRef, onAction }) {
 }
 
 function ActivityBar() {
+  const navigate = useNavigate()
   const { open: openPalette } = useCommandPalette()
   const { toggle: toggleCopilot } = useCopilot()
   const { toggle: toggleTerminal } = useTerminal()
@@ -503,6 +503,7 @@ function ActivityBar() {
       case 'palette':  openPalette();    setSettingsOpen(false); break
       case 'terminal': toggleTerminal(); setSettingsOpen(false); break
       case 'copilot':  toggleCopilot(); setSettingsOpen(false); break
+      case 'resume':   navigate({ to: '/resume' }); setSettingsOpen(false); break
       case 'fullscreen':
         document.documentElement.requestFullscreen?.().catch(() => {})
         setSettingsOpen(false)
@@ -521,7 +522,7 @@ function ActivityBar() {
             { id: 'search',     Icon: SearchIcon,    onClick: openPalette },
             { id: 'git',        Icon: GitIcon,       onClick: handleGitClick, ref: gitBtnRef, open: gitOpen },
             { id: 'extensions', Icon: ExtensionsIcon },
-            { id: 'copilot',    Icon: CopilotIcon,   onClick: toggleCopilot, extra: 'activity-bar__btn--copilot' },
+            // { id: 'copilot',    Icon: CopilotIcon,   onClick: toggleCopilot, extra: 'activity-bar__btn--copilot' },
           ].map(({ id, Icon, onClick, ref: btnRef, open, extra }, i) => (
             <div key={id} className={`activity-bar__item${i === 0 ? ' activity-bar__item--active' : ''}`}>
               <button

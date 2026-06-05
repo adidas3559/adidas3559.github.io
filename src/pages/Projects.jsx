@@ -29,7 +29,7 @@ const projects = [
   {
     emoji: '🦷',
     categories: [{ label: 'Healthcare', color: 'blue' }, { label: 'Full Stack', color: 'green' }],
-    links: [{ label: 'GitHub', href: '#' }],
+    links: [{ label: 'Live Site', href: 'https://www.humana.com/dental-vision-hearing' }],
     title: 'Humana Dental Vision D2C',
     description: 'Maintained and revamped the Direct to Consumer enrollment flow for Humana Dental & Vision. Initially maintained the existing flow in a .Net/Razor/LESS environment, then led the front end rewrite using Vue to fully decouple the UI from the back end.',
     tags: ['Vue', 'JavaScript', 'CSS/LESS', 'Razor', '.Net'],
@@ -37,7 +37,7 @@ const projects = [
   {
     emoji: '🤖',
     categories: [{ label: 'AI / Chat', color: 'pink' }, { label: 'Healthcare', color: 'blue' }],
-    links: [{ label: 'GitHub', href: '#' }],
+    links: [],
     title: 'Vitality AI Chatbot',
     description: 'Implemented the UI for an AI chatbot that uses machine learning to parse hundreds of insurance documents and surface policy information. Worked closely with a Data Science Engineer to wire up real-time Azure ML outputs to the React front end.',
     tags: ['React', 'TypeScript', 'Zod', 'Azure'],
@@ -45,7 +45,7 @@ const projects = [
   {
     emoji: '🏡',
     categories: [{ label: 'CMS', color: 'orange' }, { label: 'React', color: 'blue' }],
-    links: [{ label: 'GitHub', href: '#' }],
+    links: [],
     title: 'Homebuilder Websites',
     description: 'Solely designed and owned 4 homebuilder websites end-to-end at Builder Designs using a React/Redux CMS-driven architecture. Binding live property data to custom UI components via a proprietary HOC data layer, while helping maintain 100+ production sites.',
     tags: ['React', 'Redux', 'TypeScript', 'CSS3', 'Node.js'],
@@ -53,7 +53,7 @@ const projects = [
   {
     emoji: '⚙️',
     categories: [{ label: 'AI / Dev Tools', color: 'purple' }, { label: 'Automation', color: 'green' }],
-    links: [{ label: 'GitHub', href: '#' }],
+    links: [],
     title: 'AI Ticket Workflow',
     description: 'Engineered an internal AI support ticket tool that interfaces with the GitLab and Monday.com CLIs. Ingests a ticket, attempts a code-level fix, surfaces a diff for developer review, then — upon approval — auto-creates the merge request and updates the Monday ticket.',
     tags: ['Node.js', 'GitLab CLI', 'Monday.com CLI', 'AI', 'TypeScript'],

@@ -36,7 +36,7 @@ const MENUS = [
       { label: 'projects.js', to: '/projects' },
       { label: 'skills.json', to: '/skills' },
       { type: 'sep' },
-      { label: 'Download Resume', href: '/Stephen_Forbes_Resume.pdf', download: 'Stephen_Forbes_Resume.pdf' },
+      { label: 'View Resume', to: '/resume' },
     ],
   },
   {
@@ -54,7 +54,7 @@ const MENUS = [
       { label: 'Command Palette', shortcut: 'Ctrl+P', action: 'open-palette' },
       { label: 'Toggle Sidebar', shortcut: 'Ctrl+B', action: 'toggle-sidebar' },
       { label: 'Toggle Terminal', shortcut: 'Ctrl+`', action: 'toggle-terminal' },
-      { label: "Stephen's Copilot", shortcut: 'Ctrl+Shift+C', action: 'open-copilot', icon: '✨', special: 'copilot' },
+      // { label: "Stephen's Copilot", shortcut: 'Ctrl+Shift+C', action: 'open-copilot', icon: '✨', special: 'copilot' },
       { type: 'sep' },
       { label: 'Enter Full Screen', shortcut: 'F11', action: 'fullscreen' },
       { label: 'Zoom In', shortcut: 'Ctrl++', action: 'zoom-in' },
@@ -73,9 +73,9 @@ const MENUS = [
       { label: 'projects.js', to: '/projects' },
       { label: 'skills.json', to: '/skills' },
       { label: 'experience.ts', to: '/experience' },
-      { label: 'contact.css', to: '/contact' },
-      { label: 'README.md', to: '/readme' },
-      { label: 'Stephen_Forbes_Resume.pdf', href: '/Stephen_Forbes_Resume.pdf', download: 'Stephen_Forbes_Resume.pdf' },
+      // { label: 'contact.css', to: '/contact' },
+      // { label: 'README.md', to: '/readme' },
+      { label: 'Stephen_Forbes_Resume.pdf', to: '/resume' },
     ],
   },
   {
@@ -109,7 +109,7 @@ const MENUS = [
       { label: 'About', to: '/about' },
     ],
   },
-  { label: 'Copilot', items: [], action: 'open-copilot' },
+  // { label: 'Copilot', items: [], action: 'open-copilot' },
 ]
 
 const style = css`

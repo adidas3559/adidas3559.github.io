@@ -13,8 +13,8 @@ const allFiles = [
   { to: '/projects',   filename: 'projects.js',   dir: 'src',  Icon: JsIcon    },
   { to: '/skills',     filename: 'skills.json',   dir: 'data', Icon: JsonIcon  },
   { to: '/experience', filename: 'experience.ts', dir: 'src',  Icon: TsIcon    },
-  { to: '/contact',    filename: 'contact.css',   dir: 'src',  Icon: CssIcon   },
-  { to: '/readme',     filename: 'README.md',     dir: 'src',  Icon: MdIcon    },
+  // { to: '/contact',    filename: 'contact.css',   dir: 'src',  Icon: CssIcon   },
+  // { to: '/readme',     filename: 'README.md',     dir: 'src',  Icon: MdIcon    },
 ]
 
 const style = css`
@@ -279,13 +279,13 @@ function CommandPaletteInner() {
             {showCommands && (
               <>
                 <div className="cp-section-label">Commands</div>
-                <div className="cp-cmd-item">
+                {/* <div className="cp-cmd-item">
                   <div className="cp-cmd-left">
                     <span className="cp-cmd-icon"><SparkleIcon /></span>
                     <span className="cp-cmd-name">Open Stephen's Copilot</span>
                   </div>
                   <span className="cp-cmd-shortcut">Ctrl+Shift+C</span>
-                </div>
+                </div> */}
                 <div className="cp-section-label">Files</div>
               </>
             )}

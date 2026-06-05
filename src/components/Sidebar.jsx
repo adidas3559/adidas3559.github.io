@@ -173,8 +173,8 @@ const navItems = [
   { to: '/experience', filename: 'experience.ts', icon: <TsIcon />    },
   { to: '/projects',   filename: 'projects.js',   icon: <JsIcon />    },
   { to: '/skills',     filename: 'skills.json',   icon: <JsonIcon />  },
-  { to: '/contact',    filename: 'contact.css',   icon: <CssIcon />   },
-  { to: '/readme',     filename: 'README.md',     icon: <MdIcon />    },
+  // { to: '/contact',    filename: 'contact.css',   icon: <CssIcon />   },
+  // { to: '/readme',     filename: 'README.md',     icon: <MdIcon />    },
 ]
 
 function Sidebar() {
@@ -197,17 +197,15 @@ function Sidebar() {
             </Link>
           ))}
           {/* <div className="sidebar__divider" /> */}
-          {/* PDF lives in public/ so Vite serves it at a stable URL */}
-          <a
-            href="/Stephen_Forbes_Resume.pdf"
-            download="Stephen_Forbes_Resume.pdf"
+          <Link
+            to="/resume"
             className="sidebar__resume"
           >
             <span className="sidebar__icon"><PdfIcon /></span>
             <span className="sidebar__filename">Stephen_Forbes_Resume.pdf</span>
-          </a>
+          </Link>
         </nav>
-        <div className="sidebar__copilot-section">
+        {/* <div className="sidebar__copilot-section">
           <div className="sidebar__copilot-badge" onClick={toggleCopilot} style={{ cursor: 'pointer' }}>
             <span className="sidebar__copilot-sparkle">
               <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
@@ -218,7 +216,7 @@ function Sidebar() {
             <span className="sidebar__copilot-label">Stephen's Copilot</span>
             <span className="sidebar__copilot-ai">AI</span>
           </div>
-        </div>
+        </div> */}
         <div className="sidebar__footer">
           <div className="sidebar__git">
             <span className="sidebar__git-branch">

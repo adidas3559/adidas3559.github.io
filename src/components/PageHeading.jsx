@@ -13,7 +13,7 @@ const style = css`
     letter-spacing: 0.02em;
   }
   .page-heading__title {
-    font-family: ${typography.Display};
+    font-family: ${typography.DisplayAlt};
     font-weight: 800;
     font-size: clamp(28px, 9vw, 40px);
     line-height: 0.9;

@@ -14,8 +14,8 @@ const navItems = [
   { to: '/experience', filename: 'experience.ts', icon: <TsIcon />    },
   { to: '/projects',   filename: 'projects.js',   icon: <JsIcon />    },
   { to: '/skills',     filename: 'skills.json',   icon: <JsonIcon />  },
-  { to: '/contact',    filename: 'contact.css',   icon: <CssIcon />   },
-  { to: '/readme',     filename: 'README.md',     icon: <MdIcon />    },
+  // { to: '/contact',    filename: 'contact.css',   icon: <CssIcon />   },
+  // { to: '/readme',     filename: 'README.md',     icon: <MdIcon />    },
 ]
 
 const style = css`
@@ -289,14 +289,14 @@ function MobileMenuBar() {
           {pageName}
         </span>
         <div className="mobile-bar__right">
-          <button
+          {/* <button
             className="mobile-bar__icon-btn"
             aria-label="Stephen's Copilot"
             onClick={toggleCopilot}
           >
             <CopilotIcon />
             <span className="mobile-bar__copilot-dot" />
-          </button>
+          </button> */}
           <button
             className="mobile-bar__icon-btn"
             aria-label="Search"
@@ -335,15 +335,14 @@ function MobileMenuBar() {
                 <span className="mobile-drawer__filename">{filename}</span>
               </Link>
             ))}
-            <a
-              href="/Stephen_Forbes_Resume.pdf"
-              download="Stephen_Forbes_Resume.pdf"
+            <Link
+              to="/resume"
               className="mobile-drawer__resume"
               onClick={() => setDrawerOpen(false)}
             >
               <span className="mobile-drawer__icon"><PdfIcon /></span>
               <span className="mobile-drawer__filename">Stephen_Forbes_Resume.pdf</span>
-            </a>
+            </Link>
           </nav>
           <div className="mobile-drawer__footer">
             <div className="mobile-drawer__git">

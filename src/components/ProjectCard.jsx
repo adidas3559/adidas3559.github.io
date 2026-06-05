@@ -92,7 +92,7 @@ const style = css`
     border-color: ${colors.text};
   }
   .project-card__title {
-    font-family: ${typography.Display};
+    font-family: ${typography.DisplayAlt};
     font-weight: 800;
     font-size: 22px;
     letter-spacing: -0.5px;

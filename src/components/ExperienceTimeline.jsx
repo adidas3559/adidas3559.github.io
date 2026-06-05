@@ -54,7 +54,7 @@ const style = css`
     margin-top: 1px;
   }
   .exp-timeline__title {
-    font-family: ${typography.Display};
+    font-family: ${typography.DisplayAlt};
     font-weight: 800;
     font-size: clamp(18px, 4vw, 24px);
     letter-spacing: -0.5px;

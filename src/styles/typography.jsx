@@ -5,6 +5,8 @@ import colors from './colors';
 const typography = {
   Body: 'JetBrains Mono, monospace',
   Display: 'Syne, sans-serif',
+  DisplayAlt: 'Audiowide, sans-serif',
+  System: 'system-ui, sans-serif',
 };
 
 const injectGlobal = css`

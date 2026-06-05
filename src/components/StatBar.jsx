@@ -26,7 +26,7 @@ const style = css`
     }
   }
   .stat-bar__value {
-    font-family: ${typography.Display};
+    font-family: ${typography.DisplayAlt};
     font-size: 28px;
     font-weight: 800;
     color: ${colors.bright};
